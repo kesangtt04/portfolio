@@ -212,7 +212,7 @@ export default function CVPage() {
             📋 Choose Your CV Version
           </h2>
           <p style={{ color: 'var(--text-secondary)' }} className="mb-6">
-            Pick the CV version that best matches the role you're applying for
+            Pick the CV version that best matches the role you&apos;re applying for
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
