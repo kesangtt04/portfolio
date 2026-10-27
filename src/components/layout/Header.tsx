@@ -231,17 +231,31 @@ export function Header() {
         >
           <div className="flex flex-col gap-3">
             {navLinks.map((link) => (
-              <motion.button
-                key={link.key}
-                whileHover={{ x: 4 }}
-                onClick={() => scrollToSection(link.id)}
-                className="text-left px-4 py-2 rounded transition-all duration-300"
-                style={{ 
-                  color: textColor,
-                }}
-              >
-                {link.label}
-              </motion.button>
+              'href' in link ? (
+                <motion.a
+                  key={link.key}
+                  whileHover={{ x: 4 }}
+                  href={link.href}
+                  className="text-left px-4 py-2 rounded transition-all duration-300"
+                  style={{ 
+                    color: textColor,
+                  }}
+                >
+                  {link.label}
+                </motion.a>
+              ) : (
+                <motion.button
+                  key={link.key}
+                  whileHover={{ x: 4 }}
+                  onClick={() => scrollToSection(link.id!)}
+                  className="text-left px-4 py-2 rounded transition-all duration-300"
+                  style={{ 
+                    color: textColor,
+                  }}
+                >
+                  {link.label}
+                </motion.button>
+              )
             ))}
             {/* CV Link - Mobile */}
             <motion.a
