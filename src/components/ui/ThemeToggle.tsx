@@ -97,9 +97,15 @@ export function ThemeToggle() {
           key={i}
           style={{
             backgroundColor: '#00d9ff',
-            boxShadow: '0 0 8px rgba(0, 217, 255, 0.6)'
+            boxShadow: '0 0 8px rgba(0, 217, 255, 0.6)',
+            left: '50%',
+            top: '50%',
+            pointerEvents: 'none',
+            position: 'absolute',
+            marginLeft: '-3px',
+            marginTop: '-3px',
           }}
-          className="absolute w-1.5 h-1.5 rounded-full"
+          className="w-1.5 h-1.5 rounded-full"
           initial={{ x: 0, y: 0, opacity: 1, scale: 1 }}
           animate={{ 
             x: Math.cos((i / 4) * Math.PI * 2) * 40, 
@@ -108,14 +114,6 @@ export function ThemeToggle() {
             scale: 0 
           }}
           transition={{ duration: 0.8, delay: i * 0.1 }}
-          style={{
-            left: '50%',
-            top: '50%',
-            pointerEvents: 'none',
-            position: 'absolute',
-            marginLeft: '-3px',
-            marginTop: '-3px',
-          }}
         />
       ))}
     </motion.button>

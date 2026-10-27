@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Github, Mail, Phone, FileText, ArrowRight, Sparkles } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
+import Image from 'next/image';
 
 export function HeroSection() {
   const [displayedText, setDisplayedText] = useState('');
@@ -288,10 +289,12 @@ export function HeroSection() {
               }}>
                 {/* Avatar image */}
                 <div className="w-full h-full relative">
-                  <img
+                  <Image
                     src="/images/avatar.jpg"
                     alt="Nguyễn Kế Sang"
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
+                    priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent" />
                   
