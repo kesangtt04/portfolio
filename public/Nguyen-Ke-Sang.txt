@@ -1,0 +1,101 @@
+================================================================================
+                     NGUYỄN KẾ SANG - AI/ML DEVELOPER CV
+================================================================================
+
+CONTACT INFORMATION
+────────────────────────────────────────────────────────────────────────────────
+Email: sang.nguyen@example.com
+Phone: +84 xxx xxx xxx
+GitHub: https://github.com/kesangtt04
+Facebook: https://www.facebook.com/sangzxje
+LinkedIn: linkedin.com/in/nguyenkesang
+
+PROFESSIONAL SUMMARY
+────────────────────────────────────────────────────────────────────────────────
+Full-stack AI/ML Developer with 6+ months of professional experience in designing
+and deploying machine learning solutions. Expertise in Computer Vision, Natural
+Language Processing, and production ML systems. Demonstrated ability to transform
+business problems into intelligent solutions using deep learning and advanced
+architectures.
+
+TECHNICAL SKILLS
+────────────────────────────────────────────────────────────────────────────────
+Languages:
+  • Python (Advanced)
+  • SQL
+  • JavaScript/TypeScript
+  • Bash/PowerShell
+
+Machine Learning & AI:
+  • Deep Learning (PyTorch, TensorFlow)
+  • Computer Vision (CNN, Vision Transformers)
+  • Natural Language Processing (Transformers, BERT, RNN)
+  • Retrieval-Augmented Generation (RAG)
+  • Model Interpretability (CAM, SHAP)
+  • Machine Translation
+
+Frameworks & Tools:
+  • PyTorch, TensorFlow, Keras
+  • FastAPI, Flask
+  • Scikit-learn, NumPy, Pandas
+  • Docker, Kubernetes basics
+  • MLflow, Weights & Biases
+
+PROFESSIONAL EXPERIENCE
+────────────────────────────────────────────────────────────────────────────────
+AI/ML Developer
+[Company Name] | [Duration]
+  • Developed Text-to-SQL system for business intelligence (94% accuracy)
+  • Built CNN-based image classification system (93.2% accuracy)
+  • Implemented Visual Question Answering (VQA) system
+  • Conducted research on machine translation and model explainability
+  • Deployed production ML models with Docker containerization
+
+FEATURED PROJECTS
+────────────────────────────────────────────────────────────────────────────────
+1. Text-to-SQL Business System
+   - LLM Integration using RAG architecture
+   - Real-time SQL query generation from natural language
+   - 94% accuracy on business queries
+   - <200ms response time
+
+2. Image Search & Classification
+   - CNN-powered product image classification
+   - Visual similarity matching
+   - 93.2% accuracy with 45ms inference
+   - Reduced categorization time by 70%
+
+3. Visual Question Answering (VQA)
+   - Multimodal AI system combining Computer Vision & NLP
+   - Transformers and CNN-based architecture
+   - 71.3% VQA accuracy
+   - Bridges Computer Vision and NLP domains
+
+4. Deep Learning Research
+   - Machine translation with Seq2Seq models
+   - Chatbot Q&A systems
+   - Model explainability using Class Activation Maps (CAM)
+   - 0.42 BLEU score on translation tasks
+
+EDUCATION
+────────────────────────────────────────────────────────────────────────────────
+Bachelor of Science in Computer Science / AI/ML Focus
+[University Name] | [Year]
+
+CERTIFICATIONS & ACHIEVEMENTS
+────────────────────────────────────────────────────────────────────────────────
+• Deep Learning Specialization (In Progress)
+• Python for Data Science Certificate
+• Machine Learning Fundamentals Certificate
+• Open-source contributor (AI/ML projects)
+
+PUBLICATIONS & RESEARCH
+────────────────────────────────────────────────────────────────────────────────
+• Research on Model Interpretability in Deep Learning
+• Study on Machine Translation with Transformers
+• Exploration of Vision Transformers in Computer Vision
+
+================================================================================
+CV Last Updated: October 2026
+For the latest version, visit: https://nguyenkesang.dev
+================================================================================

@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  --font-inter: 'Inter', system-ui, sans-serif;
+  
+  /* Dark mode variables */
+  --bg-primary: #0a0e27;
+  --bg-secondary: #151b3d;
+  --bg-tertiary: #1f2a4a;
+  --text-primary: #f0f9ff;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --border-color: #00d9ff;
+  --border-color-light: rgba(0, 217, 255, 0.3);
+  --accent-glow: rgba(0, 217, 255, 0.2);
+}
+
+html.light {
+  /* Light mode variables */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fb;
+  --bg-tertiary: #eff1f5;
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-tertiary: #6b7280;
+  --border-color: #e5e7eb;
+  --border-color-light: #d1d5db;
+  --accent-glow: rgba(59, 130, 246, 0.08);
+}
+
+body {
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.5s ease, color 0.5s ease;
+  position: relative;
+}
+
+/* Background gradient animation */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    var(--bg-primary) 0%,
+    var(--bg-secondary) 25%,
+    var(--bg-tertiary) 50%,
+    var(--bg-secondary) 75%,
+    var(--bg-primary) 100%);
+  background-size: 400% 400%;
+  animation: bgShift 20s ease infinite;
+  pointer-events: none;
+  z-index: -2;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 50%, rgba(0, 217, 255, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(8, 145, 178, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Light mode background - optimized with more visual effects */
+html.light body::before {
+  background: linear-gradient(135deg,
+    #ffffff 0%,
+    #f0f4f8 20%,
+    #e8f1f8 40%,
+    #f5f7fa 60%,
+    #f0f4f8 80%,
+    #ffffff 100%);
+  background-size: 400% 400%;
+  animation: bgShiftLight 25s ease infinite;
+}
+
+html.light body::after {
+  background: 
+    /* Subtle grid lines */
+    linear-gradient(90deg, rgba(59, 130, 246, 0.06) 1px, transparent 1px),
+    linear-gradient(rgba(59, 130, 246, 0.06) 1px, transparent 1px),
+    /* Diagonal accent lines */
+    linear-gradient(45deg, rgba(99, 102, 241, 0.04) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(99, 102, 241, 0.04) 25%, transparent 25%),
+    /* Radial glows */
+    radial-gradient(circle at 20% 35%, rgba(59, 130, 246, 0.15) 0%, transparent 25%),
+    radial-gradient(circle at 85% 75%, rgba(139, 92, 246, 0.12) 0%, transparent 25%),
+    radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.06) 0%, transparent 50%);
+  background-size: 50px 50px, 50px 50px, 100px 100px, 100px 100px, 100% 100%, 100% 100%, 100% 100%;
+  pointer-events: none;
+  z-index: -1;
+  animation: meshShimmer 8s ease-in-out infinite;
+}
+
+@keyframes meshShimmer {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.65; }
+}
+
+@keyframes bgShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes bgShiftLight {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #06b6d4;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #00d9ff;
+}
+
+::selection {
+  background-color: #06b6d4;
+  color: var(--bg-primary);
+}
+
+/* Animations */
+@layer components {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .glass-dark {
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+  }
+
+  .cyan-glow {
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+  }
+
+  .cyan-glow:hover {
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.5);
+  }
+
+  /* Light mode hover effects - subtle */
+  html.light .card-hover:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  html.light button:hover {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+    transition: box-shadow 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html.light {
+    color-scheme: light;
+  }
+
+  html.light ::-webkit-scrollbar-track {
+    background-color: var(--bg-secondary);
+  }
+
+  html.light ::-webkit-scrollbar-thumb {
+    background-color: #3b82f6;
+  }
+}
+
+/* Form inputs */
+input[type="text"],
+input[type="email"],
+textarea {
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-tertiary);
+  opacity: 0.7;
+}
+
+html.light input[type="text"],
+html.light input[type="email"],
+html.light textarea {
+  background-color: #ffffff;
+  color: var(--text-primary);
+  border: 2px solid #cbd5e1;
+}
+
+html.light input:focus,
+html.light textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  outline: none;
+}
+
+/* Reset button styles in header nav only */
+header nav button,
+header nav a {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Keep background for quick links (GitHub, CV, Console) */
+header .flex.gap-3 a,
+header .flex.gap-3 button {
+  background-color: var(--bg-secondary) !important;
+}
+
+/* Header text in light mode - bright and clear */
+html.light header {
+  background-color: #ffffff !important;
+  border-color: #e5e7eb !important;
+}
+
+html.light header button,
+html.light header a {
+  color: #000000 !important;
+}
+
+html.light header button:hover,
+html.light header a:hover {
+  color: #1f2937 !important;
+}
+
+/* Light mode text colors */
+html.light section {
+  position: relative;
+  z-index: 1;
+}
+
+html.light h1,
+html.light h2,
+html.light h3 {
+  color: var(--text-primary) !important;
+  font-weight: 700;
+}
+
+html.light p,
+html.light span,
+html.light label {
+  color: var(--text-secondary) !important;
+}
+
+html.light a {
+  color: #3b82f6 !important;
+  transition: color 0.3s ease;
+}
+
+html.light a:hover {
+  color: #2563eb !important;
+}
+
+/* Light mode component colors */
+html.light .text-cyan-400,
+html.light .text-cyan-300,
+html.light .text-white {
+  color: var(--text-primary) !important;
+}
+
+html.light .text-gray-400,
+html.light .text-gray-300 {
+  color: var(--text-secondary) !important;
+}
+
+html.light .bg-slate-950,
+html.light .bg-slate-900 {
+  background-color: var(--bg-secondary) !important;
+}
+
+html.light .glass-dark {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Light mode card hover effects */
+html.light .card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+html.light .card-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 12px 24px rgba(59, 130, 246, 0.15), 
+              0 0 40px rgba(59, 130, 246, 0.1);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(99, 102, 241, 0.03) 100%);
+}
+
+/* Light mode button glow effects */
+html.light button:not(.bg-transparent) {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+html.light button:not(.bg-transparent):hover {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+  transform: translateY(-2px);
+}
+
+html.light button:active {
+  transform: translateY(0);
+}
+
+/* Console section light mode overrides */
+html.light section [style*="border-color"] {
+  border-color: #e5e7eb !important;
+}
+
+html.light section button {
+  color: var(--text-primary) !important;
+  background-color: var(--bg-secondary) !important;
+}
+
+html.light section button:hover {
+  background-color: var(--bg-tertiary) !important;
+}
+
+/* Light mode link animations */
+html.light a[href] {
+  position: relative;
+  color: #3b82f6;
+}
+
+html.light a[href]::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #6366f1);
+  transition: width 0.3s ease;
+}
+
+html.light a[href]:hover::after {
+  width: 100%;
+}
+
+/* Light mode badge/tag effects */
+html.light .badge-glow,
+html.light [class*="badge"],
+html.light [class*="tag"] {
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  transition: all 0.3s ease;
+}
+
+html.light .badge-glow:hover,
+html.light [class*="badge"]:hover,
+html.light [class*="tag"]:hover {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+  border-color: rgba(59, 130, 246, 0.6);
+  transform: scale(1.05);
+}
+
+
+
