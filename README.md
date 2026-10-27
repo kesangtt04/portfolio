@@ -2,6 +2,55 @@
 
 A modern, responsive portfolio website showcasing AI/ML expertise with fresh cyan/teal colors, smooth animations, and bilingual support (English & Vietnamese).
 
+🌐 **Live Portfolio:** [https://portfolio-o41j.vercel.app](https://portfolio-o41j.vercel.app)
+
+## ✨ Highlights
+
+- 🎨 **Premium Dark/Light Theme** - Smooth toggle with CSS variables
+- ⚡ **Interactive Console** - Terminal UI with 8 custom commands + REST API endpoints
+- 🚀 **Production Ready** - Deployed on Vercel with auto-deploy
+- 📊 **Responsive Design** - Mobile-first, works perfectly on all devices
+- 🎬 **Smooth Animations** - Framer Motion for polished UX
+- 🌍 **Bilingual** - English & Vietnamese support
+- 🔐 **Type Safe** - Full TypeScript implementation
+
+## 🎯 Key Features
+
+### 🌓 Dark/Light Theme
+- **CSS Variables System** - Dynamic theme switching
+- **Light Mode Enhancements** - Mesh patterns, floating icons, gradient orbs
+- **Smooth Transitions** - 0.5s cubic-bezier animations
+- **System Preference** - Auto-detect user's system theme
+
+### 💻 Interactive Console
+- **8 Custom Commands**
+  - `bio` - Portfolio biography
+  - `skills` - Technical skills matrix
+  - `projects` - Featured projects
+  - `contact` - Contact information
+  - `education` - University & GPA (7.3/10)
+  - `experience` - Work experience
+  - `status` - System health check
+  - `help` - Command reference
+
+- **Dual Tabs**
+  - Terminal tab with command history (arrow keys)
+  - API Explorer tab with live endpoint testing
+
+- **5 REST API Endpoints**
+  - `/api/v1/bio`
+  - `/api/v1/skills`
+  - `/api/v1/projects`
+  - `/api/v1/contact`
+  - `/api/v1/health`
+
+### 🎨 Premium Design
+- **Custom Lightning Icon** - Animated SVG with gradient
+- **Enhanced Footer** - Improved visibility and interaction
+- **Responsive Grid** - 2-4 column layouts
+- **Hover Effects** - Scale, translate, glow animations
+- **Consistent Colors** - Cyan (#00d9ff) primary accent
+
 ## 🚀 Features
 
 - ✨ **Fresh Cyan Color Scheme** - Modern, eye-catching design with #00d9ff primary accent
@@ -95,6 +144,19 @@ npm start
 | Text Primary | Soft White | #f0f4f8 |
 | Text Secondary | Muted Gray | #b0b8c1 |
 
+## 📄 Pages & Routes
+
+| Route | Description |
+|-------|-------------|
+| `/` | Homepage - Complete portfolio showcase |
+| `/console` | Interactive terminal with commands & API explorer |
+| `/cv` | CV page with 4 different resume versions |
+| `/api/v1/bio` | GET - User biography |
+| `/api/v1/skills` | GET - Technical & soft skills |
+| `/api/v1/projects` | GET - Project portfolio |
+| `/api/v1/contact` | GET - Contact information |
+| `/api/v1/health` | GET - System health status |
+
 ## 📱 Responsive Breakpoints
 
 - **Mobile:** < 640px (single column, full width)
@@ -163,6 +225,44 @@ Create a `.env.local` file for local development:
 - Mobile Responsive: 100%
 
 ## 🚀 Deployment
+
+### ✅ Live on Vercel
+
+The portfolio is **currently deployed** and live at:
+```
+https://portfolio-o41j.vercel.app
+```
+
+**Auto-Deploy Enabled:** Every `git push` to `main` branch automatically deploys
+
+### Deploy Your Own
+
+1. **Fork this repository**
+   ```bash
+   git clone https://github.com/kesangtt04/portfolio.git
+   cd portfolio
+   ```
+
+2. **Push to your GitHub**
+   ```bash
+   git remote set-url origin https://github.com/YOUR_USERNAME/portfolio.git
+   git push -u origin main
+   ```
+
+3. **Connect to Vercel**
+   - Go to [vercel.com](https://vercel.com)
+   - Click "Add New Project"
+   - Select your `portfolio` repository
+   - Click "Deploy"
+   - **Done!** Your portfolio is live in 2-3 minutes
+
+### Environment Setup
+
+No environment variables required for basic setup. Portfolio works out-of-the-box!
+
+Optional: For contact form submissions, configure your provider in the contact form component.
+
+## 🚀 Quick Deploy
 
 ### Deploy to Vercel (Recommended)
 
